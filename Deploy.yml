@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+    - name: Copy JAR to server
+      copy:
+        src: target/myapp-1.0-SNAPSHOT.jar
+        dest: /opt/myapp/myapp.jar
+
+    - name: Run the JAR
+      command: java -jar /opt/myapp/myapp.jar
